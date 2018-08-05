@@ -1,4 +1,3 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path')
 
 module.exports = {
@@ -12,17 +11,9 @@ module.exports = {
       /*
       your other rules for JavaScript transpiling go in here
       */
-      { // regular css files
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          use: [
-            { loader: 'css-loader?url=false' }
-          ]
-        })
-      },
-      { // sass / scss loader for webpack
-        test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+      {
+        test: /\.sass$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
       { // file-loader for webpack
         test: /\.(eot|svg|ttf|woff|woff2|otf)$/,
@@ -56,9 +47,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({ // define where to save the file
-      filename: '../assets/css/main.css'
-    }),
+    
   ],
   watchOptions: {
     poll: 1000,
@@ -67,32 +56,5 @@ module.exports = {
         path.resolve(__dirname, 'node_modules'),
         path.resolve(__dirname, 'vendor')
       ]
-}
+  }
 };
-
-// module.exports = {
-//   entry: './assets/main.js',
-//   output: {
-//     path: path.resolve('dist'),
-//     filename: 'index_bundle.js'
-//   },
-//   module: {
-//     rules: [
-//       { test: /\.css$/,
-//         use: [
-//           { loader: "style-loader" },
-//           { loader: "css-loader" }
-//         ]
-//       },
-//       {
-//         test: /\.js$/,
-//         exclude: /node_modules/,
-//         use: "babel-loader"
-//       }, {
-//         test: /\.jsx?$/,
-//         exclude: /node_modules/,
-//         use: "babel-loader"
-//       }
-//     ]
-//   }
-// }
