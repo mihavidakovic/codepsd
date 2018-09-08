@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+
+
+
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Lato', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+
+
+
+/// Copy text color
+/// @type Color
+$text-color: rgb(34, 34, 34) !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: rgb(229, 0, 80) !default;
+
+/// Light grey
+/// @type Color
+$light-grey: rgb(237, 237, 237) !default;
+
+/// Medium grey
+/// @type Color
+$mid-grey: rgb(153, 153, 153) !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: rgb(68, 68, 68) !default;
+
+// Colors
+
+$primary: #43A047;
+$primary-900: #1B5E20;
+$primary-800: #2E7D32;
+$primary-700: #388E3C;
+$primary-600: #43A047;
+$primary-500: #4CAF50;
+$primary-400: #66BB6A;
+$primary-300: #A5D6A7;
+$primary-200: #A5D6A7;
+$primary-100: #C8E6C9;
+$primary-50: #E8F5E9;
+
+$secondary: #37474F;
+$secondary-900: #263238;
+$secondary-800: #37474F;
+$secondary-700: #455A64;
+$secondary-600: #546E7A;
+$secondary-500: #607D8B;
+$secondary-400: #78909C;
+$secondary-300: #90A4AE;
+$secondary-200: #B0BEC5;
+$secondary-100: #CFD8DC;
+$secondary-50: #ECEFF1;
+
+
+
+
+
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+
+
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;

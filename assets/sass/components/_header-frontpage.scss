@@ -1,0 +1,61 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header frontpage component.
+// -----------------------------------------------------------------------------
+
+.header-frontpage {
+	background-size: cover;
+	margin-top: -1px;
+	width: 100%;
+	height: 620px;
+	float: left;
+	position: relative;
+	z-index: 1;
+	padding-top: 120px;
+	img {
+		position: absolute;
+		top: -80px;
+		left: 0;
+		width: 100%;
+		z-index: 0;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		    -ms-user-select: none;
+		        user-select: none;
+	}
+	.container {
+		z-index: 2;
+		position: relative;
+		.left {
+			width: 45%;
+			float: left;
+			h2 {
+				font-size: 45px;
+				color: $secondary-50;
+				margin: 0;
+				padding: 0;
+			}
+			p {
+				font-size: 20px;
+				color: $secondary-100;
+				line-height: 1.6em;
+				margin: 10px 0 50px;
+				padding: 0;
+			}
+			.button {
+				margin-right: 15px;
+			}
+		}
+
+		.right {
+			width: 50%;
+			float: right;
+			.video {
+				width: 100%;
+				height: 330px;
+				background-color: #FFF;
+				-webkit-box-shadow: 0 16px 50px 0 rgba(#000, 0.16);
+				        box-shadow: 0 16px 50px 0 rgba(#000, 0.16);
+			}
+		}
+	}
+}
