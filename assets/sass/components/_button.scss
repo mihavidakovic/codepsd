@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.button {
+	float: left;
+	padding: 13px 40px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	-webkit-box-shadow: 0 5px 13px 0 rgba(#000, 0.15);
+	box-shadow: 0 5px 13px 0 rgba(#000, 0.15);
+	transition: 200ms all ease-in-out;
+	cursor: pointer;
+	
+	&:hover {
+		-webkit-box-shadow: 0 8px 18px 0 rgba(#000, 0.2);
+		box-shadow: 0 8px 18px 0 rgba(#000, 0.2);
+	}
+
+	&.primary {
+		background-color: $primary;
+		color: $secondary-50;
+		&:hover {
+			background-color: $primary-700;
+		}
+	}
+
+	&.primary-white {
+		background-color: #fff;
+		color: $primary;
+		&:hover {
+			background-color: #f1f1f1;
+			color: $primary-800;
+		}
+	}
+
+	&.secondary {
+		background-color: $secondary;
+		color: $primary-50;
+		&:hover {
+			background-color: $primary-700;
+		}
+	}
+
+	&.secondary-white {
+		background-color: #fff;
+		color: $secondary-900;
+		&:hover {
+			background-color: $primary-700;
+		}
+	}
+}

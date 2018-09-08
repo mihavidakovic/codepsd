@@ -12,7 +12,7 @@ module.exports = {
       your other rules for JavaScript transpiling go in here
       */
       {
-        test: /\.sass$/,
+        test: /\.scss$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
       { // file-loader for webpack
