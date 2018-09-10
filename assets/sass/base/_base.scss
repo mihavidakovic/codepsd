@@ -8,6 +8,7 @@
 html {
   box-sizing: border-box;
   font-family: $text-font-stack;
+  overflow-x: hidden;
 }
 
 /**
@@ -28,9 +29,16 @@ html {
 a {
   color: $brand-color;
   text-decoration: none;
+  
+  transition: 200ms all ease-in-out;
 
   @include on-event {
     color: $text-color;
     text-decoration: underline;
   }
+}
+
+
+body {
+	background-color: #FBFBFB;
 }
