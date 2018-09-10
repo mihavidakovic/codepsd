@@ -11,6 +11,35 @@ export default class App extends React.Component {
 			<div>
 				<Header />
 				<HeaderFrontpage />
+				<section className='sekcija prednost'>
+					<div className='container'>
+						<h3>Prednosti</h3>
+						<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+						<ul>
+							<li>
+								<h5>Hitrost</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum.</p>
+								<a href='#'>Preberi več
+									<img src='assets/img/icon/arrow-right.svg' />
+								</a>
+							</li>
+							<li>
+								<h5>Natančnost</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum.</p>
+								<a href='#'>Preberi več
+									<img src='assets/img/icon/arrow-right.svg' />
+								</a>
+							</li>
+							<li>
+								<h5>Prilagodljivost</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum.</p>
+								<a href='#'>Preberi več
+									<img src='assets/img/icon/arrow-right.svg' />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</div>
 		);
 	}

@@ -39,6 +39,8 @@
 		    	height: 2px;
 		    	bottom: -5px;
 		    	left: 50%;
+		    	-webkit-border-radius: 3px;
+		    	        border-radius: 3px;
 		    	-webkit-transform: translateX(-50%);
 		    	   -moz-transform: translateX(-50%);
 		    	    -ms-transform: translateX(-50%);
@@ -53,7 +55,7 @@
 		    &.active {
 		    	&:after {
 		    		background-color: $secondary-50;
-		    		width: 15px;
+		    		width: 30px;
 		    	}
 		    	a {
 		    		color: $secondary-50;
@@ -62,14 +64,14 @@
 		    &:hover {
 		    	&:after {
 		    		background-color: $secondary-50;
-		    		width: 15px;
+		    		width: 30px;
 		    	}
 		    	a {
 		    		color: $secondary-50;
 		    	}
 		    }
 		    a {
-		    	padding: 5px 20px;
+		    	padding: 10px 20px;
 		    	color: $secondary-100;
 		    	text-decoration: none;
 		    }
