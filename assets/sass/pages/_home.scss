@@ -34,10 +34,10 @@
 		&:before {
 			content: "";
 			position: absolute;
-			width: 150%;
+			width: 200%;
 			height: 600px;
-			left: 0;
-			top: 250px;
+			left: -150px;
+			top: 200px;
 			background-color: #F4F6FA;
 			z-index: 0;
 			-webkit-transform: rotate(-10deg);
@@ -97,6 +97,139 @@
 			   			display: inline-block;
 			   		}
 			   	}
+			}
+		}
+	}
+
+
+	&.Testimonials-slider {
+		position: relative;
+		.testimonials-slider-container {
+			width: 100%;
+			float: left;
+			position: relative;
+			margin-top: 50px;
+			.slide-controls {
+				position: absolute;
+				top: -40px;
+				left: 0;
+				width: 60px;
+				.slide-control {
+					float: left;
+					width: 50%;
+					text-align: center;
+					font-size: 1.5em;
+					cursor: pointer;
+					color: $secondary-500;
+					&:hover {
+						color: $secondary-800;
+					}
+				}
+			}
+			.slider {
+				position: relative;
+				float: left;
+				width: 100%;
+				overflow-x: visible;
+				.slick-list {
+					overflow: visible;
+					.slick-slide {
+						padding: 0 0px;
+						-ms-overflow-x: visible;
+						    overflow-x: visible;
+						opacity: 0.2;
+						transition: 200ms all ease-in-out;
+						&.slick-active {
+							opacity: 1;
+						}
+						.slide {
+							background: #FFF;
+							outline-style: none;
+							width: 100%;
+							float: left;
+							padding: 30px 0px;
+							box-shadow: 0 20px 70px 0 rgba(#000, 0.07);
+							.avatar {
+								width: 65px;
+								height: 65px;
+								position: relative;
+								margin: 0 auto;
+								img {
+									width: 100%;
+									float: left;
+								}
+								.quote {
+									width: 25px;
+									height: 25px;
+									position: absolute;
+									background-color: #3BD3F4;
+									bottom: 0;
+									right: 0;
+									-webkit-border-radius: 100%;
+									        border-radius: 100%;
+									img {
+										width: 10px;
+										height: 8px;
+										position: absolute;
+										top: 50%;
+										left: 50%;
+										transform: translate(-50%, -50%);
+									}
+								}
+							}
+
+							.human {
+								width: 100%;
+								float: left;
+								text-align: center;
+								margin: 20px 0;
+								h4 {
+									font-size: 22px;
+									font-weight: bold;
+									margin: 0 0 5px;
+									padding: 0;
+									color: #3BD3F4;
+								}
+								h5 {
+									font-weight: normal;
+									font-size: 12px;
+									color: $secondary-300;
+									margin: 0;
+								}
+							}
+
+							.devider {
+								width: 100%;
+								float: left;
+								position: relative;
+								margin: 20px 0;
+								&:after {
+									content: "";
+									position: absolute;
+									top: 0;
+									left: 50%;
+									width: 30px;
+									height: 2px;
+									background-color: rgba(#000, 0.1);
+									transform: translateX(-50%);
+								}							
+							}
+
+							.content {
+								width: 100%;
+								float: left;
+								text-align: center;
+								p {
+									margin: 0;
+									padding: 0;
+									font-size: 16px;
+									color: $secondary-600;
+									line-height: 1.7em;
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}

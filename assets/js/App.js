@@ -2,6 +2,7 @@ import React from 'react';
 
 import Header from './components/Header/Header.js';
 import HeaderFrontpage from './components/Header/HeaderFrontpage.js';
+import Testimonials from './components/Slider/Testimonials.js';
 
 
 export default class App extends React.Component {
@@ -38,6 +39,13 @@ export default class App extends React.Component {
 								</a>
 							</li>
 						</ul>
+					</div>
+				</section>
+				<section className='sekcija Testimonials-slider'>
+					<div className='container'>
+						<h3>Prednosti</h3>
+						<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+						<Testimonials />
 					</div>
 				</section>
 			</div>
