@@ -43,7 +43,9 @@ export default class App extends React.Component {
 				</section>
 				<section className='sekcija Testimonials-slider'>
 					<div className='container'>
-					<Testimonials />
+						<h3>Prednosti</h3>
+						<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
+						<Testimonials />
 					</div>
 				</section>
 			</div>
