@@ -1,19 +1,31 @@
 import React from "react";
 import Slider from "react-slick";
+import Slide from "./Slide.js";
 
 export default class Testimonials extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      numSlides: 0,
+      currentSlide: 0
+    }
+
     this.next = this.next.bind(this);
     this.prev = this.prev.bind(this);
   }
   next() {
-    console.log(this.slider);
     this.slider.slickNext();
   }
   prev() {
     this.slider.slickPrev();
   }
+
+  componentDidMount() {
+    this.setState({
+      numSlides: this.slider.props.children.length,
+    });
+  }
+
   render() {
     var settings = {
       dots: true,
@@ -21,131 +33,23 @@ export default class Testimonials extends React.Component {
       speed: 250,
       slidesToShow: 3,
       slidesToScroll: 1,
-      variableWidth: true
+      variableWidth: false,
+      beforeChange: (current, next) => this.setState({ currentSlide: next }),
 
     };
     return (
       <div class="testimonials-slider-container">
         <div className='slide-controls'>
-          <div className='slide-control slide-prev' onClick={this.prev}><ion-icon name="arrow-dropleft"></ion-icon></div>
-          <div className='slide-control slide-next' onClick={this.next}><ion-icon name="arrow-dropright"></ion-icon></div>
+          <div className={'slide-control slide-prev ' + (this.state.currentSlide === 0 ? 'disabled' : '')} onClick={this.prev}><img src="/assets/img/icon/arrow-left.svg" /></div>
+          <div className={'slide-control slide-next ' + (this.state.currentSlide === (this.state.numSlides - 3)  ? 'disabled' : '')} onClick={this.next}><img src="/assets/img/icon/arrow-right.svg" /></div>
         </div>
         <Slider ref={c => (this.slider = c)} {...settings} className='slider'>
-          <div className='slide' style={{width: '500px'}}>
-            <div className='avatar'>
-              <img src="assets/img/testimonials/josip.png" />
-              <div className='quote'>
-                <img src="assets/img/icon/quote.png" />
-              </div>
-            </div>
-            <div className='human'>
-              <h4>Josip Rajković</h4>
-              <h5>CEO of Apple</h5>
-            </div>
-            <div className='devider'>
-            </div>
-            <div className='content'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi.</p>
-            </div>
-            <div className="bottbom-boder"></div>
-
-          </div>
-          <div className='slide' style={{width: '500px'}}>
-            <div className='avatar'>
-              <img src="assets/img/testimonials/josip.png" />
-              <div className='quote'>
-                <img src="assets/img/icon/quote.png" />
-              </div>
-            </div>
-            <div className='human'>
-              <h4>Josip Rajković</h4>
-              <h5>CEO of Apple</h5>
-            </div>
-            <div className='devider'>
-            </div>
-            <div className='content'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi.</p>
-            </div>
-            <div className="bottbom-boder"></div>
-
-          </div>
-          <div className='slide' style={{width: '500px'}}>
-            <div className='avatar'>
-              <img src="assets/img/testimonials/josip.png" />
-              <div className='quote'>
-                <img src="assets/img/icon/quote.png" />
-              </div>
-            </div>
-            <div className='human'>
-              <h4>Josip Rajković</h4>
-              <h5>CEO of Apple</h5>
-            </div>
-            <div className='devider'>
-            </div>
-            <div className='content'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi.</p>
-            </div>
-            <div className="bottbom-boder"></div>
-
-          </div>
-          <div className='slide' style={{width: '500px'}}>
-            <div className='avatar'>
-              <img src="assets/img/testimonials/josip.png" />
-              <div className='quote'>
-                <img src="assets/img/icon/quote.png" />
-              </div>
-            </div>
-            <div className='human'>
-              <h4>Josip Rajković</h4>
-              <h5>CEO of Apple</h5>
-            </div>
-            <div className='devider'>
-            </div>
-            <div className='content'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi.</p>
-            </div>
-            <div className="bottbom-boder"></div>
-
-          </div>
-          <div className='slide' style={{width: '500px'}}>
-            <div className='avatar'>
-              <img src="assets/img/testimonials/josip.png" />
-              <div className='quote'>
-                <img src="assets/img/icon/quote.png" />
-              </div>
-            </div>
-            <div className='human'>
-              <h4>Josip Rajković</h4>
-              <h5>CEO of Apple</h5>
-            </div>
-            <div className='devider'>
-            </div>
-            <div className='content'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi.</p>
-            </div>
-            <div className="bottbom-boder"></div>
-
-          </div>
-          <div className='slide' style={{width: '500px'}}>
-            <div className='avatar'>
-              <img src="assets/img/testimonials/josip.png" />
-              <div className='quote'>
-                <img src="assets/img/icon/quote.png" />
-              </div>
-            </div>
-            <div className='human'>
-              <h4>Josip Rajković</h4>
-              <h5>CEO of Apple</h5>
-            </div>
-            <div className='devider'>
-            </div>
-            <div className='content'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi.</p>
-            </div>
-            <div className="bottbom-boder"></div>
-
-          </div>
-
+          <Slide color="#3BD3F4" image="josip.png" name="Josip Rajković" position="CEO of Apple" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi." />
+          <Slide color="#F4C03B" image="miha.jpg" name="Miha Vidakovič" position="Klošar" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi." />
+          <Slide color="#F43B3B" image="nejc.jpg" name="Nejc Kralj" position="CEO of Mañana" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi." />
+          <Slide color="#3BD3F4" image="josip.png" name="Josip Rajković" position="CEO of Apple" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi." />
+          <Slide color="#F4C03B" image="miha.jpg" name="Miha Vidakovič" position="Klošar" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi." />
+          <Slide color="#F43B3B" image="nejc.jpg" name="Nejc Kralj" position="CEO of Mañana" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas maximus lorem condimentum, pretium nisl lacinia, feugiat felis. Integer ultricies mi." />
         </Slider>
       </div>
     );

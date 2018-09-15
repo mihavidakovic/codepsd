@@ -111,7 +111,7 @@
 			margin-top: 50px;
 			.slide-controls {
 				position: absolute;
-				top: -40px;
+				top: -45px;
 				left: 0;
 				width: 60px;
 				.slide-control {
@@ -120,9 +120,18 @@
 					text-align: center;
 					font-size: 1.5em;
 					cursor: pointer;
-					color: $secondary-500;
+					opacity: 0.7;
+					-webkit-user-select: none;
+					   -moz-user-select: none;
+					    -ms-user-select: none;
+					        user-select: none;
 					&:hover {
-						color: $secondary-800;
+						opacity: 1;
+					}
+
+					&.disabled {
+						opacity: 0.2;
+						cursor: default;
 					}
 				}
 			}
@@ -131,13 +140,28 @@
 				float: left;
 				width: 100%;
 				overflow-x: visible;
+				.slick-dots {
+					width: auto;
+					bottom: -30px;
+					li {
+						button {
+							width: 30px;
+							height: 30px;
+							&:before {
+								width: 20px;
+								height: 20px;
+							}
+						}
+					}
+				}
 				.slick-list {
 					overflow: visible;
 					.slick-slide {
-						padding: 0 0px;
+						padding: 0 45px 0 0;
 						-ms-overflow-x: visible;
 						    overflow-x: visible;
 						opacity: 0.2;
+						margin-right: 0px;
 						transition: 200ms all ease-in-out;
 						&.slick-active {
 							opacity: 1;
@@ -147,7 +171,8 @@
 							outline-style: none;
 							width: 100%;
 							float: left;
-							padding: 30px 0px;
+							padding: 30px 40px;
+							margin-right: 50px;
 							box-shadow: 0 20px 70px 0 rgba(#000, 0.07);
 							.avatar {
 								width: 65px;
@@ -157,6 +182,8 @@
 								img {
 									width: 100%;
 									float: left;
+									-webkit-border-radius: 100%;
+									border-radius: 100%;
 								}
 								.quote {
 									width: 25px;
@@ -182,7 +209,7 @@
 								width: 100%;
 								float: left;
 								text-align: center;
-								margin: 20px 0;
+								margin: 20px 0 10px;
 								h4 {
 									font-size: 22px;
 									font-weight: bold;
@@ -202,7 +229,7 @@
 								width: 100%;
 								float: left;
 								position: relative;
-								margin: 20px 0;
+								margin: 10px 0;
 								&:after {
 									content: "";
 									position: absolute;
@@ -224,7 +251,7 @@
 									padding: 0;
 									font-size: 16px;
 									color: $secondary-600;
-									line-height: 1.7em;
+									line-height: 1.85em;
 								}
 							}
 						}
