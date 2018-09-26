@@ -23,6 +23,7 @@ export default class App extends React.Component {
 								<a href='#'>Preberi več
 									<img src='assets/img/icon/arrow-right.svg' />
 								</a>
+								<img className='icon' src='assets/img/icon/speed.svg' />
 							</li>
 							<li>
 								<h5>Natančnost</h5>
@@ -30,6 +31,7 @@ export default class App extends React.Component {
 								<a href='#'>Preberi več
 									<img src='assets/img/icon/arrow-right.svg' />
 								</a>
+								<img className='icon' src='assets/img/icon/target3.svg' />
 							</li>
 							<li>
 								<h5>Prilagodljivost</h5>
@@ -37,13 +39,14 @@ export default class App extends React.Component {
 								<a href='#'>Preberi več
 									<img src='assets/img/icon/arrow-right.svg' />
 								</a>
+								<img className='icon' src='assets/img/icon/paintbrush.svg' />
 							</li>
 						</ul>
 					</div>
 				</section>
 				<section className='sekcija Testimonials-slider'>
 					<div className='container'>
-						<h3>Prednosti</h3>
+						<h3>Mnenja strank</h3>
 						<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h4>
 						<Testimonials />
 					</div>

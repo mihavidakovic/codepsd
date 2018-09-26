@@ -41,4 +41,11 @@ a {
 
 body {
 	background-color: #FBFBFB;
+  * {
+    -webkit-transition: $transition-speed all ease-in-out;
+    -moz-transition: $transition-speed all ease-in-out;
+    -ms-transition: $transition-speed all ease-in-out;
+    -o-transition: $transition-speed all ease-in-out;
+    transition: $transition-speed all ease-in-out;
+  }
 }
